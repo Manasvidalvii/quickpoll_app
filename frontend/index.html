@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuickPoll Pro - Real Time Polling</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Chart.js for Visual Graphs -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-100 min-h-screen p-6 font-sans transition-colors duration-200">
+  <div class="max-w-2xl mx-auto space-y-8">
+    
+    <!-- HEADER -->
+    <header class="flex justify-between items-center">
+      <div>
+        <h1 class="text-4xl font-extrabold text-blue-600 dark:text-blue-400">🗳️ QuickPoll Pro</h1>
+        <p class="text-gray-500 dark:text-gray-400 mt-1">Instant, feature-packed real-time polling</p>
+      </div>
+      <!-- DARK MODE TOGGLE BUTTON -->
+      <button id="themeToggle" class="p-2 bg-white dark:bg-gray-800 border dark:border-gray-700 rounded-lg shadow-sm text-lg">
+        🌙
+      </button>
+    </header>
+
+    <!-- CREATE POLL CARD -->
+    <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border border-gray-100 dark:border-gray-700">
+      <h2 class="text-xl font-bold mb-4">Create a New Poll</h2>
+      
+      <form id="pollForm" class="space-y-4">
+        <!-- Question -->
+        <input 
+          type="text" 
+          id="question" 
+          placeholder="Ask a question..." 
+          required 
+          class="w-full p-3 border dark:border-gray-700 dark:bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+
+        <!-- Timer / Expiration Selector -->
+        <div>
+          <label class="block text-xs text-gray-500 dark:text-gray-400 mb-1 font-semibold">TIMER / EXPIRATION</label>
+          <select id="duration" class="w-full p-2 border dark:border-gray-700 dark:bg-gray-700 rounded-lg text-sm">
+            <option value="0">Never Expires</option>
+            <option value="1">Expires in 1 Minute (Test)</option>
+            <option value="60">Expires in 1 Hour</option>
+            <option value="1440">Expires in 24 Hours</option>
+          </select>
+        </div>
+
+        <!-- Dynamic Text Options Container -->
+        <div>
+          <label class="block text-xs text-gray-500 dark:text-gray-400 mb-2 font-semibold">POLL OPTIONS</label>
+          <div id="choiceOptionsContainer" class="space-y-3">
+            <div class="flex gap-2 option-row">
+              <input type="text" class="option-text w-full p-3 border dark:border-gray-700 dark:bg-gray-700 rounded-lg" placeholder="Option 1 Text" required />
+            </div>
+            <div class="flex gap-2 option-row">
+              <input type="text" class="option-text w-full p-3 border dark:border-gray-700 dark:bg-gray-700 rounded-lg" placeholder="Option 2 Text" required />
+            </div>
+          </div>
+
+          <!-- Add Option Button -->
+          <button 
+            type="button" 
+            id="addOptionBtn" 
+            class="mt-3 text-sm text-blue-600 dark:text-blue-400 font-bold hover:underline flex items-center gap-1"
+          >
+            ➕ Add Another Option
+          </button>
+        </div>
+
+        <button 
+          type="submit" 
+          class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg transition-all"
+        >
+          Create Poll
+        </button>
+      </form>
+    </div>
+
+    <!-- POLLS LIST CONTAINER -->
+    <div id="pollsList" class="space-y-6"></div>
+  </div>
+
+  <script src="./app.js" defer></script>
+</body>
+</html>
