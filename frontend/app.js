@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5000/api/polls"; // Change to your Render URL after backend deploy
+const API_URL = "https://quickpoll-app-0iep.onrender.com";// Change to your Render URL after backend deploy
 const activeCharts = {}; 
 const openChartPollIds = new Set();
 
