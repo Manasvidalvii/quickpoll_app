@@ -2,7 +2,9 @@
 
 **QuickPoll Pro** is a full-stack, real-time polling application designed to let users create, vote on, and analyze custom polls instantly. Built with clean UI/UX and lightweight architecture, it allows seamless poll distribution via shareable links and dynamic scannable QR codes.
 
----
+# 🗳️ QuickPoll Pro - Real-Time Polling Application
+
+🚀 **Live Demo:** [https://quickpoll-app.vercel.app](https://quickpoll-app.vercel.app)
 
 ## ✨ Key Features
 
